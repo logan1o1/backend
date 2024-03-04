@@ -8,6 +8,7 @@ const authMiddleware = require('../middlewares/authMiddleware');
 const singleUpload = require('../middlewares/multerMiddleware');
 const { updateBookStatus } = require('../controllers/userSellControllers/updateSell');
 const userProfileController = require('../controllers/userProfileController/userProfileController');
+const { getBookByBookName, getBookByAuthor } = require('../controllers/userSellControllers/getBooks');
 const router = express.Router();
 
 // [+] Auth routes
@@ -24,6 +25,8 @@ router.post("/updata-status/:bookId", authMiddleware, updateBookStatus);
 router.get("/get-listed", authMiddleware , userProfileController.listMySells);
 router.get("/get-sold", authMiddleware , userProfileController.listSoldBooks);
 router.get("/get-unsold", authMiddleware , userProfileController.listUnSoldBooks);
+router.post("/get-by-name", getBookByBookName);
+router.post("/get-by-author", getBookByAuthor);
 
 
 module.exports = router;
