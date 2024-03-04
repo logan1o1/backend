@@ -9,6 +9,7 @@ const singleUpload = require('../middlewares/multerMiddleware');
 const { updateBookStatus } = require('../controllers/userSellControllers/updateSell');
 const userProfileController = require('../controllers/userProfileController/userProfileController');
 const { getBookByBookName, getBookByAuthor } = require('../controllers/userSellControllers/getBooks');
+const getBooks = require('../controllers/userSellControllers/getBooks');
 const router = express.Router();
 
 // [+] Auth routes
