@@ -27,6 +27,7 @@ router.get("/get-sold", authMiddleware , userProfileController.listSoldBooks);
 router.get("/get-unsold", authMiddleware , userProfileController.listUnSoldBooks);
 router.post("/get-by-name", getBookByBookName);
 router.post("/get-by-author", getBookByAuthor);
+router.get("/get-allunsold",getBooks.getunSoldBook);
 
 
 module.exports = router;

@@ -13,6 +13,17 @@ const getBooks = {
       next(error);
     }
   },
+  async getunSoldBook(req, res, next) {
+    try {
+      const books = await Book.find({ isAvailable : true });
+      res.status(201).json({
+        success: true,
+        books,
+      });
+    } catch (error) {
+      next(error);
+    }
+  }, 
   async getBookByCondition(req, res, next) {
     const { condition } = req.body;
     try {
