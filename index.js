@@ -20,6 +20,7 @@ app.use(cookieParser());
 app.use(
   cors({
     origin: [
+      process.env.APP_URL,
       process.env.FRONTEND_HOSPITAL,
       process.env.FRONTEND_USER,
       process.env.FRONTEND_ADMIN,

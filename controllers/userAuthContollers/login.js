@@ -5,8 +5,8 @@ const refreshuser = require("../../services/userServices/userRefresh");
 
 const loginController = {
   async login(req, res, next) {
-    const { email, password } = req.body;
-    if (!email || !password) {
+    const { userName, password } = req.body;
+    if (!userName || !password) {
       return next(CustomErrorHandler.missingFields());
     }
     const hashedPassword = hashService.hashPassword(password);

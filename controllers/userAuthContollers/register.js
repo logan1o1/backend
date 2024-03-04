@@ -3,6 +3,7 @@ const tokenService = require("../../services/tokenService");
 const { createUser } = require("../../services/userServices/createUser");
 const getUser = require("../../services/userServices/getUser");
 const refreshuser = require("../../services/userServices/userRefresh");
+const CustomErrorHandler = require("../../utils/CustomErrorHandler");
 
 const registerController = {
   async register(req, res, next) {
